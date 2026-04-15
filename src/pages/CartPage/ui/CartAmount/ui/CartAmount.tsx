@@ -1,3 +1,4 @@
+import { Button } from 'shared/ui/Button/ui/Button';
 import s from '../../CartPage.module.css';
 import classNames from 'classnames';
 
@@ -49,15 +50,10 @@ export const CartAmount = ({ products }: CartAmountProps) => {
 					{`${allPrice - allDiscount} ₽`}
 				</span>
 			</div>
-			<button
-				onClick={handleSubmitCart}
-				className={classNames(
-					s['button'],
-					s['button_type_primary'],
-					s['button_type_wide']
-				)}>
+
+			<Button variant='primary' size='small' onClick={handleSubmitCart}>
 				Оформить заказ
-			</button>
+			</Button>
 		</div>
 	);
 };

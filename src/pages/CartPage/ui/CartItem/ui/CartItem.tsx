@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import s from '../../CartPage.module.css';
 import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
-import { cartActions } from '../../../../../shared/store/slices/cart';
-import { CartCounter } from '../../../../../shared/ui/CartCounter';
+import { cartActions } from 'app/store/slices/cart';
+import { CartCounter } from 'features/cart/ui/CartCounter';
 
 type CartItemProps = {
 	product: CartProduct;

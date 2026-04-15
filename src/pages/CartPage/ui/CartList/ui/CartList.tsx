@@ -5,6 +5,7 @@ import classNames from 'classnames';
 type CartListProps = {
 	products: CartProduct[];
 };
+
 export const CartList = ({ products }: CartListProps) => {
 	return (
 		<div className={classNames(s['cart-list'])}>
