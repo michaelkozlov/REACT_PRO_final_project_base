@@ -60,6 +60,7 @@ export const ProductPage = WithProtection(() => {
 					)}
 
 					<LikeButton product={product} />
+
 					<div className={classNames(s['product__delivery'])}>
 						<img src={truckSVG} alt='truck' />
 						<div className={classNames(s['product__right'])}>

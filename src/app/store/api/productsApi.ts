@@ -50,10 +50,9 @@ const productsApi = baseApi.injectEndpoints({
 		}),
 		getProduct: builder.query<Product, Pick<Product, 'id'>>({
 			query: ({ id }) => ({ url: `/products/${id}` }),
-			providesTags: (productFromBE) =>
-				productFromBE
-					? [{ type: 'Products', id: productFromBE.id }]
-					: [{ type: 'Products', id: 'UNKNOWN' }],
+			providesTags: (productFromBE) => [
+				{ type: 'Products', id: productFromBE?.id },
+			],
 		}),
 		createProduct: builder.mutation<Product, Product>({
 			query: (product) => ({
@@ -78,10 +77,10 @@ const productsApi = baseApi.injectEndpoints({
 				url: `/products/${id}/likes`,
 				method: 'PUT',
 			}),
-			invalidatesTags: (result) =>
-				result
-					? [{ type: 'Products', id: result.like.productId }]
-					: [{ type: 'Products', id: 'list' }],
+			invalidatesTags: (productFromBE) => [
+				{ type: 'Products', id: 'list' },
+				{ type: 'Products', id: productFromBE?.like.productId },
+			],
 		}),
 		deleteLikeProduct: builder.mutation<
 			DeleteLikeResponse,
@@ -91,10 +90,10 @@ const productsApi = baseApi.injectEndpoints({
 				url: `/products/${id}/likes`,
 				method: 'DELETE',
 			}),
-			invalidatesTags: (result) =>
-				result
-					? [{ type: 'Products', id: result.product.productId }]
-					: [{ type: 'Products', id: 'list' }],
+			invalidatesTags: (productFromBE) => [
+				{ type: 'Products', id: 'list' },
+				{ type: 'Products', id: productFromBE?.product.productId },
+			],
 		}),
 	}),
 });

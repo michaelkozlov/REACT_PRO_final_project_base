@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { CartCounter } from 'features/cart/ui/CartCounter';
 import { LikeButton } from 'features/like-button';
 import { Button } from 'shared/ui/Button/ui/Button';
+import { memo } from 'react';
 
 type ICardProps = {
 	product: Product;
@@ -12,7 +13,7 @@ type ICardProps = {
 	isProductInCart: boolean;
 };
 
-export const Card = ({
+const CardComponents = ({
 	product,
 	addProductToCart,
 	isProductInCart,
@@ -71,3 +72,5 @@ export const Card = ({
 		</article>
 	);
 };
+
+export const Card = memo(CardComponents);

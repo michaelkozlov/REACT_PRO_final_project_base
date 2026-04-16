@@ -11,6 +11,7 @@ type Props = {
 	variant?: 'primary' | 'secondary';
 	size?: 'small' | 'medium';
 	children: ReactNode;
+	ref?: React.Ref<HTMLButtonElement>;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<Props> = ({
