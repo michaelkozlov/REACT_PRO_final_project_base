@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { useEffect, useRef, type FC } from 'react';
 import {
 	Avatar,
 	Box,
@@ -46,6 +46,7 @@ export const SignInForm: FC = () => {
 		// валидации, мы используем yup
 		resolver: yupResolver(signInFormSchema),
 	});
+	const emailRef = useRef<HTMLInputElement>(null);
 
 	const submitHandler: SubmitHandler<TSignInFormValues> = async (values) => {
 		try {
@@ -79,6 +80,10 @@ export const SignInForm: FC = () => {
 			);
 		}
 	};
+
+	useEffect(() => {
+		emailRef.current?.focus();
+	}, []);
 
 	return (
 		<Container component='main' maxWidth='xs'>
@@ -116,6 +121,8 @@ export const SignInForm: FC = () => {
 								autoComplete='email'
 								error={!!errors.email?.message}
 								helperText={errors.email?.message}
+								inputRef={emailRef}
+								variant='filled'
 								{...field}
 							/>
 						)}
@@ -132,6 +139,7 @@ export const SignInForm: FC = () => {
 								margin='normal'
 								fullWidth
 								required
+								variant='filled'
 								{...field}
 							/>
 						)}

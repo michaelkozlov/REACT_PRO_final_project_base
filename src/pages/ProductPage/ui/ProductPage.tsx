@@ -10,7 +10,7 @@ import { useGetProductQuery } from 'app/store/api/productsApi';
 import { ButtonBack } from 'shared/ui/ButtonBack';
 import { Rating } from 'shared/ui/Rating';
 import { CartCounter } from 'features/cart/ui/CartCounter';
-import { ProductCartCounter } from 'features/product-cart-counter';
+import { ProductCartCounter } from 'features/cart/product-cart-counter';
 import { LikeButton } from 'features/like-button';
 import { ReviewList } from 'widgets/ReviewList/ui/ReviewList';
 
