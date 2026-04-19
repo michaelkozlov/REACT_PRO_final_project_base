@@ -48,6 +48,16 @@
 
 - Сборка vite с SWC;
 
+- Время сборок
+
+Время Vite - 2.82
+Время Webpack - 6.64 с
+Вывод - Vite (в 2.35x быстрее)
+
+![webpack](src/shared/assets/gif/webpack.png)
+
+![vite](src/shared/assets/gif/vite.png)
+
 ## Задание 6 React 19 Hooks:
 
 ### Что сделано:
