@@ -3,16 +3,16 @@ import { useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import truckSVG from '../../../shared/assets/icons/truck.svg';
 import qualitySVG from '../../../shared/assets/icons/quality.svg';
-import { Rating } from '../../../shared/ui/Rating';
-import { ButtonBack } from '../../../shared/ui/ButtonBack';
-import { LikeButton } from '../../../shared/ui/LikeButton';
-import { ReviewList } from '../../../widgets/ReviewList/ui/ReviewList';
-import { WithProtection } from '../../../shared/store/HOCs/WithProtection';
-import { useGetProductQuery } from '../../../shared/store/api/productsApi';
-import { ProductCartCounter } from '../../../shared/ui/ProductCartCounter/ui/ProductCartCounter';
-import { useAppSelector } from '../../../shared/store/utils';
-import { cartSelectors } from '../../../shared/store/slices/cart';
-import { CartCounter } from '../../../shared/ui/CartCounter';
+import { WithProtection } from 'app/store/HOCs/WithProtection';
+import { useAppSelector } from 'app/store/utils';
+import { cartSelectors } from 'app/store/slices/cart';
+import { useGetProductQuery } from 'app/store/api/productsApi';
+import { ButtonBack } from 'features/back-button';
+import { Rating } from 'shared/ui/Rating';
+import { CartCounter } from 'features/cart/ui/CartCounter';
+import { ProductCartCounter } from 'features/cart/product-cart-counter';
+import { LikeButton } from 'features/like-button';
+import { ReviewList } from 'widgets/ReviewList/ui/ReviewList';
 
 export const ProductPage = WithProtection(() => {
 	const location = useLocation();
@@ -60,6 +60,7 @@ export const ProductPage = WithProtection(() => {
 					)}
 
 					<LikeButton product={product} />
+
 					<div className={classNames(s['product__delivery'])}>
 						<img src={truckSVG} alt='truck' />
 						<div className={classNames(s['product__right'])}>

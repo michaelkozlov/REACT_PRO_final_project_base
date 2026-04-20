@@ -1,0 +1,10 @@
+{
+	"extends": "./tsconfig.app.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"allowJs": true
+	},
+	"include": ["src", "vite.config.ts", "webpack"]
+}
