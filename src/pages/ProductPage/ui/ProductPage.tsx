@@ -7,7 +7,7 @@ import { WithProtection } from 'app/store/HOCs/WithProtection';
 import { useAppSelector } from 'app/store/utils';
 import { cartSelectors } from 'app/store/slices/cart';
 import { useGetProductQuery } from 'app/store/api/productsApi';
-import { ButtonBack } from 'shared/ui/ButtonBack';
+import { ButtonBack } from 'features/back-button';
 import { Rating } from 'shared/ui/Rating';
 import { CartCounter } from 'features/cart/ui/CartCounter';
 import { ProductCartCounter } from 'features/cart/product-cart-counter';
