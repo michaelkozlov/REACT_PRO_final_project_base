@@ -53,11 +53,9 @@ export const Modal: FC<IModalProps> = ({ isOpen, onClose, children }) => {
 	}, [isOpen, onClose]);
 
 	useEffect(() => {
-		return () => {
-			if (!isOpen && triggerRef.current) {
-				triggerRef.current.focus();
-			}
-		};
+		if (!isOpen && triggerRef.current) {
+			triggerRef.current.focus();
+		}
 	}, [isOpen]);
 
 	const handleClose = (e?: React.MouseEvent<HTMLButtonElement>) => {

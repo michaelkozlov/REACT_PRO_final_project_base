@@ -3,6 +3,7 @@ import s from '../../CartPage.module.css';
 import classNames from 'classnames';
 import { useConfirmDialog } from 'shared/ui/ConfirmDialog/useConfirmDialog';
 import { ConfirmDialog } from 'shared/ui/ConfirmDialog/ConfirmDialog';
+import styles from './CartAmount.module.css';
 
 type CartAmountProps = {
 	products: CartProduct[];
@@ -24,9 +25,6 @@ export const CartAmount = ({ products }: CartAmountProps) => {
 			const order = products.map((p) => ({ id: p.id, count: p.count }));
 			alert(`Заказ ${JSON.stringify(order, null, 2)} оформлен!`);
 		}
-
-		const order = products.map((p) => ({ id: p.id, count: p.count }));
-		console.log('Отправка заказа на сервер: ', JSON.stringify(order, null, 2));
 	};
 
 	const { isOpen, onCancel, onConfirm, options, showConfirmDialog } =
@@ -67,7 +65,11 @@ export const CartAmount = ({ products }: CartAmountProps) => {
 					</span>
 				</div>
 
-				<Button variant='primary' size='small' onClick={handleSubmitCart}>
+				<Button
+					variant='primary'
+					size='small'
+					onClick={handleSubmitCart}
+					className={styles.confirmButton}>
 					Оформить заказ
 				</Button>
 			</div>

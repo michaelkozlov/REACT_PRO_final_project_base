@@ -4,6 +4,7 @@ type TRating = {
 	rating?: number;
 	isEdit?: boolean;
 	onChange?: (rating: number) => void;
+	name?: string;
 };
 export const Rating = ({ rating = 0, isEdit = false, onChange }: TRating) => {
 	return (

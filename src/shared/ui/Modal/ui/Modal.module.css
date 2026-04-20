@@ -15,3 +15,7 @@
 	width: 20px;
 	height: 20px;
 }
+
+.closeButton:focus {
+	border: 2px solid black;
+}

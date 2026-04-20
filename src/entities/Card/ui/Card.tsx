@@ -13,7 +13,7 @@ type ICardProps = {
 	isProductInCart: boolean;
 };
 
-const CardComponents = ({
+const CardComponent = ({
 	product,
 	addProductToCart,
 	isProductInCart,
@@ -73,4 +73,4 @@ const CardComponents = ({
 	);
 };
 
-export const Card = memo(CardComponents);
+export const Card = memo(CardComponent);
