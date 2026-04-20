@@ -1,7 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
 import type { FC } from 'react';
-import { createPortal } from 'react-dom';
-import { getConfirmRoot } from './createConfirmContainer';
 import { Modal } from '../Modal/ui/Modal';
 
 export interface IConfirmDialogProps {
@@ -19,7 +17,7 @@ export const ConfirmDialog: FC<IConfirmDialogProps> = ({
 	onCancel,
 	isOpen,
 }) => {
-	return createPortal(
+	return (
 		<Modal isOpen={isOpen} onClose={onCancel}>
 			<Box
 				sx={{
@@ -52,7 +50,6 @@ export const ConfirmDialog: FC<IConfirmDialogProps> = ({
 					</Button>
 				</Box>
 			</Box>
-		</Modal>,
-		getConfirmRoot()
+		</Modal>
 	);
 };
